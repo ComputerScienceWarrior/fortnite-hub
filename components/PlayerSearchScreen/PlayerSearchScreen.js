@@ -21,6 +21,7 @@ const PlayerSearchScreen = () => {
                 "Authorization": apiKey,
                }
             });
+            console.log(response.data.data)
             setResult(response.data);
         } catch (err) {
             setError("Error fetching player. It\'s possible their account is private or you mispelled their handle.");
