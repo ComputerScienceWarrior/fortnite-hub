@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button } from 'react-native';
 import axios from 'axios';
 import Styles from './styles';
 import Constants from 'expo-constants';
+import Error from '../Error/Error';
 
 const PlayerSearchScreen = () => {
     const { apiUrl, apiKey } = Constants.expoConfig.extra;
@@ -22,7 +23,7 @@ const PlayerSearchScreen = () => {
             });
             setResult(response.data);
         } catch (err) {
-            setError('Error fetching player');
+            setError("Error fetching player. It\'s possible their account is private or you mispelled their handle.");
         } finally {
             setLoading(false);
         }
@@ -45,7 +46,7 @@ const PlayerSearchScreen = () => {
                 color="#6200ea"
             />
             {loading && <Text style={Styles.loadingText}>Loading...</Text>}
-            {error && <Text style={Styles.errorText}>{error}</Text>}
+            {error && <Error />}
             {result && (
                 <View style={Styles.resultContainer}>
                     <Text style={Styles.resultText}>Player Found:</Text>
