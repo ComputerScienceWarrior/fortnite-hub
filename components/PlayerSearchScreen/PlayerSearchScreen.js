@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import Styles from './styles';
 import Constants from 'expo-constants';
 import Error from '../Error/Error';
 
-const PlayerSearchScreen = () => {
+const PlayerSearchScreen = ( {navigation} ) => {
     const { apiUrl, apiKey } = Constants.expoConfig.extra;
     const [username, setUsername] = useState('');
     const [result, setResult] = useState(null);
@@ -21,8 +21,7 @@ const PlayerSearchScreen = () => {
                 "Authorization": apiKey,
                }
             });
-            console.log(response.data.data)
-            setResult(response.data);
+            setResult(response.data.data);
         } catch (err) {
             setError("Error fetching player. It\'s possible their account is private or you mispelled their handle.");
         } finally {
@@ -51,7 +50,9 @@ const PlayerSearchScreen = () => {
             {result && (
                 <View style={Styles.resultContainer}>
                     <Text style={Styles.resultText}>Player Found:</Text>
-                    {/* <Text style={Styles.resultText}>{result.username}</Text> */}
+                    <TouchableOpacity onPress={() => navigation.navigate('Player', { player: result })}>
+                        <Text style={Styles.resultText}>{username}</Text>
+                    </TouchableOpacity>
                 </View>
             )}
         </View>
