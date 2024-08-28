@@ -43,13 +43,13 @@ const PlayerDetailsScreen = ({ route }) => {
             
             <View style={styles.footer}>
                 <TouchableOpacity onPress={() => setMode('solo')}>
-                    <Text style={{ fontSize: 16, color: mode === 'solo' ? 'blue' : 'black' }}>Solo</Text>
+                    <Text style={ mode === 'solo' ? styles.selected : styles.notSelected }>Solo</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setMode('duo')}>
-                    <Text style={{ fontSize: 16, color: mode === 'duo' ? 'blue' : 'black' }}>Duo</Text>
+                    <Text style={ mode === 'duo' ? styles.selected : styles.notSelected}>Duo</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setMode('squads')}>
-                    <Text style={{ fontSize: 16, color: mode === 'squads' ? 'blue' : 'black' }}>Squads</Text>
+                    <Text style={ mode === 'squads' ? styles.selected : styles.notSelected }>Squads</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

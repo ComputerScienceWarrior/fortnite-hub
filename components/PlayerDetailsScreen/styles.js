@@ -48,8 +48,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         justifyContent: 'space-around',
         marginTop: 'auto',
-    }
-
+    },
+    selected: {
+        color: 'blue',
+        fontSize: 20,
+    },
+    notSelected: {
+        color: 'black',
+        fontSize: 16,
+    },
 });
 
 export default styles;
