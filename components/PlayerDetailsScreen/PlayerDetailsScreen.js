@@ -41,7 +41,7 @@ const PlayerDetailsScreen = ({ route }) => {
                 </View>
             </View>
             
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 20 }}>
+            <View style={styles.footer}>
                 <TouchableOpacity onPress={() => setMode('solo')}>
                     <Text style={{ fontSize: 16, color: mode === 'solo' ? 'blue' : 'black' }}>Solo</Text>
                 </TouchableOpacity>
