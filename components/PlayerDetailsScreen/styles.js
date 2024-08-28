@@ -2,9 +2,12 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
-        height: '100%',
-        padding: 10
+        backgroundColor: 'white',
+        height: '98%',
+        padding: 10,
+        borderWidth: 2,
+        borderRadius: 5,
+        margin: 10
     },
     playerNameBox: {
         display: 'flex',
@@ -30,9 +33,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 2,
         padding: 10,
-        borderRadius: 10,
     },
     statsText: {
         fontWeight: 'bold',
@@ -42,6 +43,11 @@ const styles = StyleSheet.create({
     },
     goodColor: {
         color: 'green'
+    },
+    footer: {
+        flexDirection: 'row', 
+        justifyContent: 'space-around',
+        marginTop: 'auto',
     }
 
 });
